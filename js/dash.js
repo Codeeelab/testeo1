@@ -1,38 +1,44 @@
-let progress = 0; // Variable para el progreso
-const progressBar = document.getElementById("progress-bar");
-const sidebarProgressBar = document.getElementById("sidebar-progress-bar");
-
-// Recuperar el progreso desde localStorage al cargar la página
 document.addEventListener("DOMContentLoaded", function() {
-    const savedProgress = localStorage.getItem("courseProgress");
-    if (savedProgress) {
-        progress = parseInt(savedProgress); // Convertimos el string a número
+    let progress = localStorage.getItem("courseProgress"); 
+
+    // Si no hay progreso guardado, se inicia en 0
+    if (progress === null) {
+        progress = 0;
+    } else {
+        progress = parseInt(progress); // Convertimos a número
     }
-    updateProgressBars(); // Actualizar la barra al cargar
+
+    updateProgressBars(progress);
+
+    document.getElementById("complete-button")?.addEventListener("click", function() {
+        markModuleAsCompleted(progress);
+    });
 });
 
-// Evento al hacer clic en "Marcar como completado"
-document.getElementById("complete-button")?.addEventListener("click", function() {
-    markModuleAsCompleted();
-});
-
-function markModuleAsCompleted() {
+function markModuleAsCompleted(currentProgress) {
     // Solo incrementar si el progreso es menor a 20
-    if (progress < 20) {
-        progress = 20; // Se establece en 20 solo una vez
-        localStorage.setItem("courseProgress", progress); // Guardar en localStorage
-        updateProgressBars(); // Actualizar la barra de progreso
+    if (currentProgress < 20) {
+        currentProgress = 20; // Se establece en 20 solo una vez
+        localStorage.setItem("courseProgress", currentProgress); // Guardar en localStorage
+        updateProgressBars(currentProgress);
     } else {
         alert("Ya has completado este módulo.");
     }
 }
 
-function updateProgressBars() {
+function updateProgressBars(progress) {
+    const progressBar = document.getElementById("progress-bar");
+    const sidebarProgressBar = document.getElementById("sidebar-progress-bar");
+
     // Actualizar la barra de progreso
-    progressBar.style.width = progress + "%";
-    progressBar.textContent = progress + "%";
-    
+    if (progressBar) {
+        progressBar.style.width = progress + "%";
+        progressBar.textContent = progress + "%";
+    }
+
     // Actualizar la barra de la sidebar
-    sidebarProgressBar.style.width = progress + "%";
-    sidebarProgressBar.textContent = progress + "%";
+    if (sidebarProgressBar) {
+        sidebarProgressBar.style.width = progress + "%";
+        sidebarProgressBar.textContent = progress + "%";
+    }
 }
