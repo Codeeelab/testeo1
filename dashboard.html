@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Alumno</title>
+    <link rel="stylesheet" href="css/dash.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="logo">
+                <h2>Academy Excellence</h2>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#">Inicio</a></li>
+                <li><a href="#">Mis Cursos</a></li>
+                <li><a href="#">Progreso</a></li>
+                <li><a href="#">Certificados</a></li>
+                <li><a href="#">Perfil</a></li>
+                <li><a href="#">Cerrar sesión</a></li>
+            </ul>
+            
+            <!-- Barra de Progreso en la Sidebar -->
+            <div class="progress-sidebar">
+                <h3>Progreso del Curso</h3>
+                <div class="progress-bar">
+                    <div id="sidebar-progress-bar" class="progress" style="width: 0%;">0%</div>
+                </div>
+                <p id="sidebar-completion-percentage">0% completado</p>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <header>
+                <div class="header">
+                    <h1>Bienvenido, [Nombre del Alumno]</h1>
+                </div>
+            </header>
+
+            <!-- Sección de Cursos -->
+            <section class="courses">
+                <h2>Mis Cursos</h2>
+                <div class="course-list">
+                    <div class="course">
+                        <h3>Curso de HTML</h3>
+                        <p>Progreso: <span id="course-progress">0%</span></p>
+                        <button onclick="window.location.href = 'tema1.html';">Ver Curso</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección de Progreso -->
+            <section class="progress">
+                <h2>Mi Progreso</h2>
+                <div class="progress-bar">
+                    <div id="progress-bar" class="progress" style="width: 0%;">0%</div>
+                </div>
+                <p>Has completado <span id="completion-percentage">0%</span> de tu curso.</p>
+            </section>
+
+            <!-- Sección de Certificados -->
+            <section class="certificates">
+                <h2>Mis Certificados</h2>
+                <ul>
+                    <li>Certificado de HTML - <a href="#">Descargar</a></li>
+                    <!-- Agregar más certificados aquí -->
+                </ul>
+            </section>
+        </div>
+    </div>
+
+    <script src="/js/dash.js"></script>
+</body>
+</html>
+

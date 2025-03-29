@@ -1,0 +1,148 @@
+/* Estilos generales */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Contenedor principal */
+.dashboard-container {
+    display: flex;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 250px;
+    background-color: #2c3e50;
+    color: white;
+    height: 100vh;
+    padding: 20px;
+    position: fixed;
+}
+
+.logo {
+    margin-bottom: 30px;
+    text-align: center;
+    font-size: 24px;
+}
+
+.nav-links {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.nav-links li {
+    margin: 15px 0;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+/* Barra de Progreso en Sidebar */
+.progress-sidebar {
+    margin-top: 50px;
+    text-align: center;
+    padding-top: 20px;
+}
+
+.progress-sidebar h3 {
+    font-size: 18px;
+    color: white;
+}
+
+.progress-bar {
+    background-color: #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    height: 25px;
+    margin: 10px 0;
+}
+
+.progress {
+    background-color: #3498db;
+    height: 100%;
+    text-align: center;
+    line-height: 25px;
+    color: white;
+    font-weight: bold;
+}
+
+/* Main Content */
+.main-content {
+    margin-left: 250px;
+    padding: 20px;
+    width: 100%;
+}
+
+.header {
+    background-color: #ecf0f1;
+    padding: 20px;
+}
+
+.courses, .progress, .certificates {
+    margin-top: 30px;
+}
+
+.courses h2, .progress h2, .certificates h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.course-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.course {
+    background-color: #3498db;
+    color: white;
+    padding: 20px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.course h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.course p {
+    font-size: 16px;
+}
+
+.course button {
+    padding: 10px 15px;
+    background-color: #2980b9;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.course button:hover {
+    background-color: #1c5981;
+}
+
+.certificates ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.certificates li {
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+.certificates a {
+    color: #3498db;
+    text-decoration: none;
+}
+
+.certificates a:hover {
+    text-decoration: underline;
+}
